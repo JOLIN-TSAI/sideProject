@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>MyTodoList</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+    <main>
+
+        <div class="container">
+            <h2 class="">
+                todoList
+            </h2>
+            <div class="input-tag">
+                <div class="row-tag">
+                    <span class="tag">private</span>
+                    <span class="tag">work</span>
+                    <span class="tag">family</span>
+                    <span class="tag">learning</span>
+                </div>
+                <div class="input-task">
+                    <input type="text" class="input" placeholder="請輸入項目">
+                    <button type="button" class="btn"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <div class="area1">
+                <div class="select">
+                    <i class="fas fa-tag"></i>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected disabled>請選擇</option>
+                        <option value="1">private</option>
+                        <option value="2">work</option>
+                        <option value="3">family</option>
+                        <option value="3">learning</option>
+                    </select>
+                </div>
+                <div class="item">
+                    <div class="col col1">
+                        <input type="checkbox">
+                    </div>
+                    <div class="col col1">class</div>
+                    <div class="col col1">內容</div>
+                    <div class="col col1"><i class="fa-solid fa-check"></i></div>
+                </div>
+            </div>
+            <div class="area2">
+                <h2>
+                    完成事項
+                </h2>
+            </div>
+        </div>
+
+    </main>
+    <script src="/index.js"></script>
+</body>
+
+</html>

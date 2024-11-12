@@ -1,0 +1,119 @@
+:root {
+    --box-bg: #FAFAFA;
+    --area-bg: #ffeb3b;
+    --title: #212121;
+    --text: black;
+    --tag: #2196f3;
+    --tag-hover: #1976d2;
+    --tag-active: red;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', 'Noto Sans TC', 'sans-serif';
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 1.7;
+    color: var(--text);
+    background: #F7F5F2;
+    text-align: center;
+}
+
+.container {
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    padding: 50px 0;
+    background-color: var(--area-bg);
+}
+
+.input-tag {
+    background-color: var(--box-bg);
+
+    .row-tag {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+
+        .tag {
+            background-color: var(--tag);
+            padding: 5px;
+            border-radius: 10px;
+            color: white;
+
+            &:hover {
+                background-color: var(--tag-hover);
+            }
+
+            &:active {
+                background-color: var(--tag-active);
+            }
+        }
+    }
+
+    .input-task {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        .input {
+            font-family: 'Lato', 'Noto Sans TC', 'sans-serif';
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid #aaa;
+            color: var(--text);
+            font-size: 1.8rem;
+            width: 500px;
+        }
+
+        .fa-plus {
+            color: white;
+            padding: 15px;
+            background-color: gray;
+            border-radius: 50%;
+        }
+    }
+}
+
+.area1 {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    .select {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+
+        select {
+            width: 500px;
+        }
+    }
+
+    .item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        border: 1px solid #aaa;
+
+        .select {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+
+            .form-select {
+                width: 300px;
+            }
+        }
+    }
+}
