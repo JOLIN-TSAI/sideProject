@@ -1,0 +1,99 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    width: 100vw;
+    height: 100vh;
+    background: url(/image/pngtree-golden-entrance-of-a-bank-vault-image_2628930.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #ffffff6a;
+}
+
+h1 {
+    background: wheat;
+    border-radius: 15px;
+}
+
+.content {
+    background-color: wheat;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.input-group {
+    width: 250px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    width: 100vw;
+    height: 100vh;
+    background: url(https://images.pexels.com/photos/6765365/pexels-photo-6765365.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.box {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #ffffff6a;
+}
+
+h1 {
+    background: wheat;
+    border-radius: 15px;
+}
+
+.content {
+    background-color: wheat;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.input-group {
+    width: 250px;
+}
+
+/* 手機版樣式 */
+@media (max-width: 768px) {
+    .box {
+        width: 90vw;
+        padding: 20px;
+    }
+
+    .input-group {
+        width: 80%;
+    }
+
+    h1,
+    .content {
+        width: 100%;
+    }
+}
