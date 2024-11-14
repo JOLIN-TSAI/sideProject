@@ -1,12 +1,31 @@
 // 新增待辦項目
 function addTask(note, tag) {
+	// 新增時不同tag的顏色
+	let bgClass;
+	switch (tag) {
+		case "private":
+			bgClass = "bg-warning";
+			break;
+		case "work":
+			bgClass = "bg-primary";
+			break;
+		case "family":
+			bgClass = "bg-success";
+			break;
+		case "learning":
+			bgClass = "bg-danger";
+			break;
+		default:
+			bgClass = "bg-secondary";
+			break;
+	}
 	const template = `
         <div class="row task-item d-flex align-items-center">
             <div class="col-1">
                 <input type="checkbox" class="task-checkbox">
             </div>
-            <div class="col-2">
-                <span class="badge bg-primary">${tag}</span>
+            <div class="col-2 text-start">
+                <span class="badge ${bgClass}">${tag}</span>
             </div>
             <div class="col-5">
                 ${note}
@@ -20,6 +39,12 @@ function addTask(note, tag) {
         </div>`;
 	$(".tasks").append(template);
 }
+
+//點擊標籤自動帶入值到select
+$(".tag").on("click", (e) => {
+	const tagText = $(e.currentTarget).text().trim();
+	$(".tag-select").val(tagText);
+});
 
 // 監聽 Enter 鍵與按鈕點擊事件
 $(".input-task .input").on("keyup", (e) => {
@@ -53,6 +78,7 @@ $(".container").on("change", ".task-checkbox", (e) => {
 	const taskRow = $(e.target).closest(".task-item");
 	if ($(e.target).prop("checked")) {
 		taskRow.appendTo(".area2"); // 移動到完成事項區
+		taskRow.addClass("completed"); // 添加劃線樣式
 	} else {
 		taskRow.appendTo(".tasks"); // 移回待辦清單
 	}

@@ -1,8 +1,8 @@
 :root {
-    --box-bg: #f0d4d4;
-    --area-bg: #ffeb3b;
-    --title: #212121;
-    --text: black;
+    --box-bg: rgb(255, 255, 120);
+    --area-bg: #040404;
+    --title: #fff;
+    --text: #f1f11e;
     --tag: #2196f3;
     --tag-hover: #1976d2;
     --tag-active: red;
@@ -16,7 +16,7 @@ body {
     font-weight: 400;
     font-size: 2rem;
     line-height: 1.7;
-    color: var(--text);
+    color: var(--title);
     background: #F7F5F2;
     text-align: center;
 }
@@ -29,6 +29,10 @@ body {
     gap: 50px;
     padding: 50px 0;
     background-color: var(--area-bg);
+
+    h3 {
+        color: var(--text);
+    }
 }
 
 .input-tag {
@@ -74,7 +78,6 @@ body {
             background-color: transparent;
             border: none;
             border-bottom: 2px solid #aaa;
-            color: var(--text);
             font-size: 1.8rem;
             width: 500px;
         }
@@ -120,4 +123,10 @@ body {
             width: 500px;
         }
     }
+}
+
+/* 完成後移到完成清單時畫線表示完成 */
+.completed .col-5 {
+    text-decoration: line-through;
+    color: rgb(195, 195, 195);
 }
