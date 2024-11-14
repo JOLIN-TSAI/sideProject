@@ -81,6 +81,7 @@ $(".container").on("change", ".task-checkbox", (e) => {
 		taskRow.addClass("completed"); // 添加劃線樣式
 	} else {
 		taskRow.appendTo(".tasks"); // 移回待辦清單
+		taskRow.removeClass("completed");
 	}
 });
 
