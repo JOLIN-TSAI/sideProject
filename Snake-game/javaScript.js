@@ -23,8 +23,10 @@ snake[3] = {
 	y: 0,
 };
 
-window.addEventListener("keydown", changeDirection);
 let d = "Right"; //初始方向
+
+//透過方向鍵操控蛇的位置
+window.addEventListener("keydown", changeDirection);
 function changeDirection(e) {
 	if (e.key == "ArrowRight" && d != "Left") {
 		d = "Right";
@@ -50,6 +52,18 @@ function draw() {
 			ctx.fillStyle = "lightblue";
 		}
 		ctx.strokeStyle = "white";
+
+		//穿牆
+		if (snake[i].x >= canvas.width) {
+			snake[i].x = 0;
+		} else if (snake[i].x < 0) {
+			snake[i].x = canvas.width - unit;
+		} else if (snake[i].y >= canvas.height) {
+			snake[i].y = 0;
+		} else if (snake[i].y < 0) {
+			snake[i].y = canvas.height - unit;
+		}
+
 		ctx.fillRect(snake[i].x, snake[i].y, unit, unit);
 		ctx.strokeRect(snake[i].x, snake[i].y, unit, unit);
 	}
