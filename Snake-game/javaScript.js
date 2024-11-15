@@ -134,5 +134,18 @@ function setHighestScore(score) {
 	}
 }
 
+// 重新開始遊戲
+document.getElementById("start").addEventListener("click", restartGame);
+function restartGame() {
+	clearInterval(SnakeGame);
+	createSnake();
+	myFruit.pickALocation();
+	d = "Right";
+	score = 0;
+	document.getElementById("myScore").innerHTML = "遊戲分數: " + score;
+	document.getElementById("myScore2").innerHTML = "最高分數: " + highestScore;
+	SnakeGame = setInterval(draw, 100);
+}
+
 // 開始遊戲
 let SnakeGame = setInterval(draw, 100);
