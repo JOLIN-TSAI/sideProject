@@ -1,4 +1,4 @@
-//sep 1 綁定卡片&點擊事件
+//step 1 綁定卡片&點擊事件
 const cards = document.querySelectorAll(".memory-card");
 const btn = document.querySelector(".btn");
 cards.forEach((card) => card.addEventListener("click", flipCard));
@@ -38,12 +38,12 @@ function resetGame() {
 	}, 500);
 }
 
-//sep 2 宣告遊戲狀態變數
+//step 2 宣告遊戲狀態變數
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 
-//sep 3 卡片翻轉邏輯
+//step 3 卡片翻轉邏輯
 function flipCard() {
 	if (lockBoard || this === firstCard) return;
 	this.classList.add("flip");
@@ -56,14 +56,14 @@ function flipCard() {
 	secondCard = this;
 	checkMatch();
 }
-//sep 4 檢查匹配
+//step 4 檢查匹配
 function checkMatch() {
 	firstCard.dataset.framework === secondCard.dataset.framework
 		? disableCards()
 		: unflipCards();
 }
 
-//sep 5 匹配成功時禁用卡片
+//step 5 匹配成功時禁用卡片
 function disableCards() {
 	firstCard.removeEventListener("click", flipCard);
 	secondCard.removeEventListener("click", flipCard);
@@ -71,7 +71,7 @@ function disableCards() {
 	checkGameCompletion();
 }
 
-//sep 6 匹配失敗時翻回卡片
+//step 6 匹配失敗時翻回卡片
 function unflipCards() {
 	lockBoard = true;
 	setTimeout(() => {
@@ -82,13 +82,13 @@ function unflipCards() {
 	}, 1500);
 }
 
-//sep 7 重置遊戲狀態
+//step 7 重置遊戲狀態
 function resetBoard() {
 	[hasFlippedCard, lockBoard] = [false, false];
 	[firstCard, secondCard] = [null, null];
 }
 
-//sep 8 隨機打亂卡片順序
+//step 8 隨機打亂卡片順序
 (function shuffle() {
 	cards.forEach((card) => {
 		let randomPos = Math.floor(Math.random() * 12);
