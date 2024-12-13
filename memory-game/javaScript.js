@@ -89,12 +89,12 @@ function resetBoard() {
 }
 
 //step 8 隨機打亂卡片順序
-(function shuffle() {
+function shuffle() {
 	cards.forEach((card) => {
 		let randomPos = Math.floor(Math.random() * 12);
 		card.style.order = randomPos;
 	});
-})();
+}
 
 // 初始執行時進行第一次洗牌
 shuffle();
