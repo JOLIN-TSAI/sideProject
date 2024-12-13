@@ -1,6 +1,42 @@
 //sep 1 綁定卡片&點擊事件
 const cards = document.querySelectorAll(".memory-card");
+const btn = document.querySelector(".btn");
 cards.forEach((card) => card.addEventListener("click", flipCard));
+btn.addEventListener("click", resetGame);
+
+// 檢查是否完成遊戲
+function checkGameCompletion() {
+	const allFlipped = [...cards].every((card) =>
+		card.classList.contains("flip")
+	);
+
+	if (allFlipped) {
+		setTimeout(() => {
+			const restart = confirm("恭喜完成！是否再來一局？");
+			if (restart) {
+				resetGame();
+			} else {
+				alert("遊戲結束！感謝遊玩！");
+			}
+		}, 500);
+	}
+}
+
+// 按鈕：再來一局
+function resetGame() {
+	cards.forEach((card) => {
+		card.classList.remove("flip");
+		card.removeEventListener("click", flipCard);
+		card.addEventListener("click", flipCard);
+	});
+
+	setTimeout(() => {
+		shuffle();
+		resetBoard();
+		lockBoard = false;
+		alert("遊戲已重置，開始遊戲吧！");
+	}, 500);
+}
 
 //sep 2 宣告遊戲狀態變數
 let hasFlippedCard = false;
@@ -17,7 +53,6 @@ function flipCard() {
 		firstCard = this;
 		return;
 	}
-
 	secondCard = this;
 	checkMatch();
 }
@@ -33,6 +68,7 @@ function disableCards() {
 	firstCard.removeEventListener("click", flipCard);
 	secondCard.removeEventListener("click", flipCard);
 	resetBoard();
+	checkGameCompletion();
 }
 
 //sep 6 匹配失敗時翻回卡片
@@ -42,6 +78,7 @@ function unflipCards() {
 		firstCard.classList.remove("flip");
 		secondCard.classList.remove("flip");
 		resetBoard();
+		checkGameCompletion();
 	}, 1500);
 }
 
@@ -58,3 +95,6 @@ function resetBoard() {
 		card.style.order = randomPos;
 	});
 })();
+
+// 初始執行時進行第一次洗牌
+shuffle();
